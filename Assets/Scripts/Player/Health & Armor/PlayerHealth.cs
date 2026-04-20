@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private PlayerArmor armor;
+    [SerializeField] private GameObject dieScreen;
+    [SerializeField] private PlayerCamera playerCamera;
     
     private int _currentHealth;
     private int _remainingArmor;
@@ -46,10 +49,9 @@ public class PlayerHealth : MonoBehaviour
         healthUI.OnDamage();
     }
 
-    private void Death()
+    public void Death()
     {
         _isDead = true;
-        Destroy(gameObject);
     }
     
 }
