@@ -58,7 +58,7 @@ public class HitscanWeapon : MonoBehaviour
         
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, weaponRange))
         {
-            var target = hit.collider.GetComponent<IDamageable>();
+            var target = hit.collider.GetComponentInParent<IDamageable>();
             var normalHit = hit.point + hit.normal * 0.01f;
             
             if (target != null)
