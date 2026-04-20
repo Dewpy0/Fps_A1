@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HitscanWeapon : MonoBehaviour
@@ -22,6 +23,14 @@ public class HitscanWeapon : MonoBehaviour
     [SerializeField] private float fireRate;
 
     private bool _canShoot = true;
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            TryShoot();
+        }
+    }
 
     public void TryShoot()
     {
