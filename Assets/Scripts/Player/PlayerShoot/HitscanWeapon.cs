@@ -32,7 +32,7 @@ public class HitscanWeapon : MonoBehaviour
         }
     }
 
-    public void TryShoot()
+    private void TryShoot()
     {
         if (playerAmmo == null) return;
      
